@@ -20,6 +20,7 @@ permutation-verify = "neurips_permutations.verify:main"
 permutation-split = "neurips_permutations.splits:main"
 permutation-train = "neurips_permutations.training:main"
 permutation-experiments = "neurips_permutations.experiments:main"
+permutation-audit = "neurips_permutations.audit:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
