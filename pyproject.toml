@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurips-permutation-data"
+version = "0.1.0"
+description = "Auditable Passage Math data for 20 permutation tasks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+train = ["torch>=2.5"]
+
+[project.scripts]
+permutation-generate = "neurips_permutations.generate:main"
+permutation-verify = "neurips_permutations.verify:main"
+permutation-split = "neurips_permutations.splits:main"
+permutation-train = "neurips_permutations.training:main"
+permutation-experiments = "neurips_permutations.experiments:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

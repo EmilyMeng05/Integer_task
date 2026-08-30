@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+.venv/
+runs/
+
+# The generated corpus is intentionally local: 10M records are too large for GitHub.
+data/**/*.jsonl
+data/**/*.jsonl.gz
+data/**/*.partial
+data/**/manifest.json
+data/**/*_manifest.json
+!data/.gitkeep
+!data/sample.jsonl
+!data/sample_manifest.json
