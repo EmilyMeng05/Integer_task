@@ -4,6 +4,7 @@ from dataclasses import replace
 import gzip
 import json
 from pathlib import Path
+import random
 
 import pytest
 import torch
@@ -281,6 +282,30 @@ def test_checkpoint_resume_matches_uninterrupted_training(tmp_path: Path) -> Non
     assert full_checkpoint["state"] == resumed_checkpoint["state"]
     for name, tensor in full_checkpoint["model"].items():
         assert torch.equal(tensor, resumed_checkpoint["model"][name]), name
+
+
+def test_restore_rng_normalizes_cuda_states_to_cpu_byte_tensors(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured: list[torch.Tensor] = []
+
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+
+    def capture(values: list[torch.Tensor]) -> None:
+        captured.extend(values)
+
+    monkeypatch.setattr(torch.cuda, "set_rng_state_all", capture)
+    training_module._restore_rng(
+        {
+            "python": random.getstate(),
+            "torch": torch.get_rng_state(),
+            "cuda": [[1, 2, 3], torch.tensor([4, 5], dtype=torch.int64)],
+        }
+    )
+
+    assert [value.tolist() for value in captured] == [[1, 2, 3], [4, 5]]
+    assert all(value.device.type == "cpu" for value in captured)
+    assert all(value.dtype == torch.uint8 for value in captured)
 
 
 def test_resume_rejects_changed_training_config(tmp_path: Path) -> None:

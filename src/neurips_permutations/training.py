@@ -630,7 +630,18 @@ def _restore_rng(state: Mapping[str, Any]) -> None:
     random.setstate(state["python"])
     torch.set_rng_state(state["torch"].cpu())
     if "cuda" in state and torch.cuda.is_available():
-        torch.cuda.set_rng_state_all(state["cuda"])
+        # A CUDA checkpoint is loaded with ``map_location=device`` above, so
+        # its saved generator states are CUDA ByteTensors at this point.
+        # ``set_rng_state_all`` deliberately accepts CPU ByteTensors only.
+        # Normalising also keeps checkpoints portable if a state was decoded
+        # as a plain byte sequence by another serializer.
+        cuda_states = [
+            value.detach().to(device="cpu", dtype=torch.uint8)
+            if isinstance(value, Tensor)
+            else torch.as_tensor(value, dtype=torch.uint8, device="cpu")
+            for value in state["cuda"]
+        ]
+        torch.cuda.set_rng_state_all(cuda_states)
 
 
 def _fsync_directory(path: Path) -> None:
