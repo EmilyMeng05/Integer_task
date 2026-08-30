@@ -34,7 +34,16 @@ def test_frozen_matrix_contains_thirty_unique_nested_runs() -> None:
 
 
 def test_status_starts_with_every_run_incomplete(tmp_path: Path) -> None:
-    summary = matrix_summary(CONFIG)
+    config = tmp_path / "henry_permutation.toml"
+    config.write_text(
+        CONFIG.read_text(encoding="utf-8").replace(
+            'output_dir = "runs/henry-permutation"',
+            f'output_dir = "{tmp_path / "runs"}"',
+        ),
+        encoding="utf-8",
+    )
+
+    summary = matrix_summary(config)
     assert summary["run_count"] == 30
     assert summary["complete_count"] == 0
     assert summary["incomplete_count"] == 30
