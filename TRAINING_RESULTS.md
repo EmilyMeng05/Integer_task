@@ -68,14 +68,41 @@ accuracy is +8.33, +17.61, +17.08, +14.40, and +10.73 percentage points for
 1, 2, 4, 8, and 16 tasks. The corresponding difference in fixed-holdout token
 accuracy is -3.90, -9.43, -10.10, -5.31, and -2.77 points.
 
+## Preliminary zero-shot generalization result
+
+The fixed four-task holdout is the clean comparison because those tasks are
+unseen by every model. Holdout token accuracy rises from 19.18% to 43.75% for
+the Transformer and from 23.08% to 49.05% for the MLP between the one-task and
+eight-task conditions, then falls modestly at 16 tasks. This is evidence of
+better prefix-conditioned token transfer with greater task diversity, with a
+peak at eight tasks under the fixed optimizer-step budget.
+
+Exact canonical-sequence generalization remains weak. Averaged over the four
+holdouts, it never exceeds 0.88% for the Transformer or 3.12% for the MLP.
+`to_reduced_word` and `to_lehmer` have 0% exact accuracy in every condition.
+The nonzero results come from `compose` (best three-seed mean: 1.54% for the
+Transformer and 2.16% for the MLP) and `parity` (best: 2.92% and 12.50%).
+
+The four held-out operations use opaque task tokens that never occur during
+base-model training. Consequently, hard zero-shot task identification is
+underdetermined: the model is never taught what those four tokens mean. The
+more informative Henry comparisons are therefore few-shot adaptation against
+a random-initialization baseline and linear probing of pre-answer hidden
+states; neither has been run yet.
+
 ## Interpretation boundary
 
-These are validation diagnostics from shard 098. They use teacher forcing:
-each answer token is predicted with the gold answer prefix available.
-`sequence_accuracy` therefore means every teacher-forced answer-token and EOS
-argmax was correct; it is not free-running generation exact match. Shard 099 has not been
-used for final testing, and greedy decoding, few-shot holdout fine-tuning,
-linear probes, and representation-geometry analysis remain separate downstream
-experiments. Accordingly, this report establishes that all 30 base-model
-training runs completed successfully; it does not claim held-out generative
-generalization.
+These are validation diagnostics from shard 098, which was consulted throughout
+training. Token accuracy uses teacher forcing, so every answer token is
+predicted with the gold answer prefix available and copy/formatting tokens can
+inflate it. `sequence_accuracy` requires every answer-token and EOS argmax to
+be correct. Because the models are strictly causal, that all-token event is
+equivalent to greedy exact generation of the canonical target for the same
+prompt, although a separate decoding harness has not yet been run.
+
+Shard 099 remains untouched by model evaluation. A frozen test pass, few-shot
+holdout fine-tuning, random-initialization baselines, linear probes, and
+representation-geometry analysis remain downstream experiments. Accordingly,
+this report establishes completion of all 30 base-model runs and a preliminary
+validation-set zero-shot result; it is not the completed Henry generalization
+study.
