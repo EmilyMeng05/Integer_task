@@ -55,3 +55,12 @@ format review.
 
 See [PROTOCOL.md](PROTOCOL.md) for exact definitions, composition conventions,
 canonical output rules, and the extended Passage Math grammar.
+
+## Experiment documentation
+
+- [TRAINING_PROCESS.md](TRAINING_PROCESS.md): complete data-generation,
+  encoding, architecture, training, recovery, validation, audit, and
+  generalization record.
+- [EXPERIMENTS.md](EXPERIMENTS.md): frozen Henry nested-task matrix.
+- [TRAINING_RESULTS.md](TRAINING_RESULTS.md): final validation tables and
+  generalization interpretation.
