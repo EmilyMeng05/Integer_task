@@ -31,7 +31,17 @@ We have 20 tasks:
 19. Sum of an integer list
 20. Factorial
 
-Similar to Xuanyu's set up, I will fix four tasks: **predecessor, least common multiple, modular addition, and sort ascending**. The other 16 tasks will be shuffled once and used as nested training subsets of the **1, 2, 4, 8, and 16 tasks**.
+Similar to Xuanyu's set up, I will fix four tasks: **predecessor, least common multiple, modular addition, and sort ascending**. 
+
+* Predecessor is related to Successor and subtraction
+
+* LCM is related to GCD and multiplication
+
+* Modular addition is related to addition and modulo 
+
+* Sorting ascending is related to comparison and list sum
+
+The other 16 tasks will be shuffled once and used as nested training subsets of the **1, 2, 4, 8, and 16 tasks**.
 
 # Below are experimentation details that are exactly the same as written in Xuanyu's doc
 
