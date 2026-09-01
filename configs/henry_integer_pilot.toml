@@ -1,0 +1,59 @@
+# Phase 1 integer pilot, aligned with the permutation experiment.
+
+protocol_version = "henry-integer/v1-pilot"
+dataset_protocol_version = "integer-8/v1-pilot"
+status = "dataset_verified_training_smoke_pending"
+dataset_manifest = "data/integer-20k-pilot/manifest.json"
+output_dir = "runs/integer-pilot-smoke"
+task_order_seed = 20260830
+task_subset_sizes = [1, 2, 4, 8]
+architectures = ["transformer", "mlp"]
+formal_model_seeds = [17, 42, 314159]
+smoke_seed = 17
+
+task_order = [
+  "decimal_digit_sum",
+  "greatest_common_divisor",
+  "multiplication",
+  "greater_than",
+  "integer_list_sum",
+  "modulo",
+  "addition",
+  "successor",
+]
+
+holdout_tasks = [
+  "predecessor",
+  "least_common_multiple",
+  "modular_addition",
+  "sort_ascending",
+]
+
+[data]
+train_shards = "000-097"
+validation_shards = "098"
+test_shards = "099"
+training_decimal_digits = [1, 2, 3, 4, 5]
+ood_decimal_digits = [6, 7, 8, 9, 10]
+shuffle_buffer = 1000
+max_sequence_length = 1024
+
+[model]
+d_model = 256
+transformer_layers = 4
+mlp_layers = 1
+num_heads = 8
+ff_multiplier = 4
+dropout = 0.1
+tie_embeddings = true
+
+[smoke]
+max_steps = 2
+micro_batch_size = 4
+gradient_accumulation_steps = 1
+learning_rate = 0.0003
+weight_decay = 0.01
+warmup_steps = 1
+validate_every_steps = 1
+checkpoint_every_steps = 1
+validation_batches_per_task = 1
