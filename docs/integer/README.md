@@ -29,6 +29,7 @@ The corpus contains 20 tasks:
 17. Modular addition
 18. Sort ascending
 19. Sum of an integer list
+20. Factorial
  
 
 **Check:** Do you approve this exact 20-task list? In particular, should we remove `maximum`, `minimum`, `most-significant digit`, `ones digit`, and `digit at a specified decimal place`, or should any of them replace one of the retained tasks?
@@ -76,6 +77,7 @@ For example, 247 + 85 = 332 would be represented approximately as:
 
 <BOS>
 <NUM_START> 02 47 <NUM_END>
++ 
 <ARG_START> 85 <ARG_END>
 <ADDITION>
 =
