@@ -61,6 +61,14 @@ def _integer_model_factory(
     return build_model(**values)
 
 
+def build_integer_model(
+    config: shared_training.TrainConfig | Mapping[str, Any],
+) -> torch.nn.Module:
+    """Build the integer model described by a serialized training config."""
+
+    return _integer_model_factory(shared_training.TrainConfig.from_value(config))
+
+
 def train_integer_run(
     run_config: shared_training.TrainConfig | Mapping[str, Any],
     *,
@@ -186,6 +194,7 @@ if __name__ == "__main__":
 __all__ = [
     "NESTED_TASKS",
     "automatic_device",
+    "build_integer_model",
     "smoke_config",
     "train_integer_run",
 ]

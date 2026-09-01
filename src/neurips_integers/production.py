@@ -213,7 +213,7 @@ def build_train_config(
     )
 
 
-def _completion_is_valid(
+def completion_is_valid(
     run: ProductionRun,
     *,
     config_path: Path,
@@ -245,7 +245,7 @@ def matrix_status(config_path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
     complete: list[str] = []
     incomplete: list[str] = []
     for run in build_matrix(config_path):
-        target = complete if _completion_is_valid(run, config_path=config_path) else incomplete
+        target = complete if completion_is_valid(run, config_path=config_path) else incomplete
         target.append(run.run_id)
     return {
         "run_count": 24,
@@ -280,7 +280,7 @@ def run_matrix(
 ) -> int:
     runs = _selected_runs(build_matrix(config_path), only)
     for run in runs:
-        if preflight_steps is None and _completion_is_valid(
+        if preflight_steps is None and completion_is_valid(
             run, config_path=config_path
         ):
             print(f"Skipping verified completed run: {run.run_id}", flush=True)
@@ -351,6 +351,7 @@ __all__ = [
     "ProductionRun",
     "build_matrix",
     "build_train_config",
+    "completion_is_valid",
     "main",
     "matrix_status",
     "read_config",
