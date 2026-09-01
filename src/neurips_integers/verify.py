@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from typing import Mapping, Sequence
 
-from .generate import SCHEMA_VERSION, TASK_NAMES
+from .generate import SUPPORTED_SCHEMA_VERSIONS, TASK_NAMES
 from . import math_ops as ops
 from .passage import TASK_SPECS, VOCABULARY, passage_tokens
 
@@ -77,11 +77,11 @@ def _mathematical_answer(task: str, inputs: Mapping[str, object]) -> int:
     raise AssertionError(f"unhandled task {task!r}")
 
 
-def verify_record(record: object, expected_id: int) -> str:
+def verify_record(record: object, expected_id: int, *, schema_version: str) -> str:
     if not isinstance(record, dict):
         _fail("record must be an object")
     task = TASK_NAMES[expected_id % len(TASK_NAMES)]
-    if record.get("schema_version") != SCHEMA_VERSION:
+    if record.get("schema_version") != schema_version:
         _fail("wrong schema version")
     if record.get("id") != expected_id or record.get("task") != task:
         _fail("record id/task schedule mismatch")
@@ -120,8 +120,9 @@ def verify_record(record: object, expected_id: int) -> str:
 def verify(directory: Path) -> dict[str, object]:
     manifest_path = directory / "manifest.json"
     manifest = json.loads(manifest_path.read_text())
-    if manifest.get("schema_version") != SCHEMA_VERSION:
-        _fail("manifest schema mismatch")
+    schema_version = manifest.get("schema_version")
+    if schema_version not in SUPPORTED_SCHEMA_VERSIONS:
+        _fail("manifest uses an unsupported integer schema")
     if manifest.get("tasks") != list(TASK_NAMES):
         _fail("manifest task order mismatch")
     shards = manifest.get("shards")
@@ -138,7 +139,9 @@ def verify(directory: Path) -> dict[str, object]:
         shard_counts: Counter[str] = Counter()
         with gzip.open(path, "rt", encoding="utf-8") as handle:
             for line in handle:
-                task = verify_record(json.loads(line), expected_id)
+                task = verify_record(
+                    json.loads(line), expected_id, schema_version=schema_version
+                )
                 counts[task] += 1
                 shard_counts[task] += 1
                 expected_id += 1

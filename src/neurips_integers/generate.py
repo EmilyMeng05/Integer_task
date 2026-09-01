@@ -16,7 +16,10 @@ from . import math_ops as ops
 from .passage import TASK_SPECS, passage_tokens
 
 
-SCHEMA_VERSION = "integer-8/v1-pilot"
+PILOT_SCHEMA_VERSION = "integer-8/v1-pilot"
+PRODUCTION_SCHEMA_VERSION = "integer-8/v1"
+SUPPORTED_SCHEMA_VERSIONS = (PILOT_SCHEMA_VERSION, PRODUCTION_SCHEMA_VERSION)
+SCHEMA_VERSION = PILOT_SCHEMA_VERSION
 TASK_ORDER_SEED = 20_260_830
 TASK_NAMES: tuple[str, ...] = (
     "decimal_digit_sum",
@@ -94,11 +97,14 @@ def build_record(
     min_digits: int = DEFAULT_MIN_DIGITS,
     max_digits: int = DEFAULT_MAX_DIGITS,
     seed: int = DEFAULT_SEED,
+    schema_version: str = SCHEMA_VERSION,
 ) -> dict[str, Any]:
     if isinstance(record_id, bool) or not isinstance(record_id, int) or record_id < 0:
         raise ValueError("record_id must be a nonnegative integer")
     if not 1 <= min_digits <= max_digits:
         raise ValueError("digit range must satisfy 1 <= min_digits <= max_digits")
+    if schema_version not in SUPPORTED_SCHEMA_VERSIONS:
+        raise ValueError(f"unsupported integer schema: {schema_version!r}")
 
     task = TASK_NAMES[record_id % len(TASK_NAMES)]
     occurrence = record_id // len(TASK_NAMES)
@@ -139,7 +145,7 @@ def build_record(
     render_kwargs = dict(inputs)
     tokens = passage_tokens(task, answer, size=digits, **render_kwargs)  # type: ignore[arg-type]
     return {
-        "schema_version": SCHEMA_VERSION,
+        "schema_version": schema_version,
         "id": record_id,
         "task": task,
         "n_digits": digits,
@@ -167,6 +173,7 @@ def generate(
     min_digits: int = DEFAULT_MIN_DIGITS,
     max_digits: int = DEFAULT_MAX_DIGITS,
     seed: int = DEFAULT_SEED,
+    schema_version: str = SCHEMA_VERSION,
 ) -> dict[str, Any]:
     if count <= 0 or count % len(TASK_NAMES):
         raise ValueError("count must be positive and divisible by eight")
@@ -194,6 +201,7 @@ def generate(
                         min_digits=min_digits,
                         max_digits=max_digits,
                         seed=seed,
+                        schema_version=schema_version,
                     )
                     counts[record["task"]] += 1
                     line = json.dumps(
@@ -215,7 +223,7 @@ def generate(
         )
 
     manifest = {
-        "schema_version": SCHEMA_VERSION,
+        "schema_version": schema_version,
         "count": count,
         "base": 100,
         "min_digits": min_digits,
