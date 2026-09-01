@@ -3,9 +3,11 @@
 
 protocol_version = "henry-integer/v1"
 dataset_protocol_version = "integer-8/v1"
-status = "generation_pending"
+status = "dataset_verified"
 dataset_dir = "data/integer-4m-v1"
 dataset_manifest = "data/integer-4m-v1/manifest.json"
+output_dir = "runs/henry-integer-v1"
+preflight_output_dir = "runs/henry-integer-v1-preflight"
 task_order_seed = 20260830
 sampling_seed = 20260830
 total_records = 4000000
