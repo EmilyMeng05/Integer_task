@@ -15,3 +15,4 @@ data/**/*_manifest.json
 !data/.gitkeep
 !data/sample.jsonl
 !data/sample_manifest.json
+.vscode/
