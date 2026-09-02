@@ -3,6 +3,7 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .coverage
+.DS_Store
 .venv/
 runs/
 
@@ -12,6 +13,8 @@ data/**/*.jsonl.gz
 data/**/*.partial
 data/**/manifest.json
 data/**/*_manifest.json
+data/integer-4m-v1/
+data/integer-20k-pilot/
 !data/.gitkeep
 !data/sample.jsonl
 !data/sample_manifest.json

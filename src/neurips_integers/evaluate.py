@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import argparse
-from collections import defaultdict
-from dataclasses import asdict, dataclass
+from collections import Counter, defaultdict
+from dataclasses import asdict, dataclass, field
 import gzip
 import hashlib
 import json
@@ -34,6 +34,8 @@ DEFAULT_OOD_MANIFEST = Path("data/integer-ood-40k-v1/manifest.json")
 DEFAULT_OUTPUT_DIR = Path("results/integer-v1")
 IID_LENGTHS = (1, 2, 3, 4, 5)
 OOD_LENGTHS = (6, 7, 8, 9, 10)
+FORMAT_VERSION = 2
+TRAINING_MAX_DECIMAL_DIGITS = 5
 
 
 def _sha256(path: Path) -> str:
@@ -85,6 +87,26 @@ def parse_generated_answer(tokens: Sequence[str]) -> int | None:
     except (TypeError, ValueError):
         return None
     return value if next_index == len(tokens) - 1 else None
+
+
+def input_base100_width(n_digits: int) -> int:
+    """Return the number of base-100 tokens required by an n-digit operand."""
+
+    if isinstance(n_digits, bool) or not isinstance(n_digits, int) or n_digits < 1:
+        raise ValueError("n_digits must be a positive integer")
+    return (n_digits + 1) // 2
+
+
+def generalization_regime(n_digits: int) -> str:
+    """Name the IID, magnitude-OOD, or true token-length-OOD regime."""
+
+    width = input_base100_width(n_digits)
+    training_width = input_base100_width(TRAINING_MAX_DECIMAL_DIGITS)
+    if n_digits <= TRAINING_MAX_DECIMAL_DIGITS:
+        return "iid"
+    if width <= training_width:
+        return "magnitude_ood_familiar_token_width"
+    return "token_length_ood"
 
 
 def _manifest_records(
@@ -160,6 +182,12 @@ class MetricAccumulator:
     teacher_tokens: int = 0
     teacher_token_correct: int = 0
     teacher_sequence_correct: int = 0
+    target_counts: Counter[int] = field(default_factory=Counter)
+    generated_value_counts: Counter[int] = field(default_factory=Counter)
+    target_equal_one_examples: int = 0
+    target_equal_one_exact: int = 0
+    target_greater_than_one_examples: int = 0
+    target_greater_than_one_exact: int = 0
 
     def update(
         self,
@@ -177,6 +205,15 @@ class MetricAccumulator:
         self.examples += 1
         self.exact += int(parsed == expected_value)
         self.well_formed += int(parsed is not None)
+        self.target_counts[expected_value] += 1
+        if parsed is not None:
+            self.generated_value_counts[parsed] += 1
+        if expected_value == 1:
+            self.target_equal_one_examples += 1
+            self.target_equal_one_exact += int(parsed == expected_value)
+        elif expected_value > 1:
+            self.target_greater_than_one_examples += 1
+            self.target_greater_than_one_exact += int(parsed == expected_value)
         self.generated_token_matches += sum(
             left == right for left, right in zip(expected_tokens, generated_tokens)
         )
@@ -186,7 +223,13 @@ class MetricAccumulator:
         self.teacher_token_correct += teacher_token_correct
         self.teacher_sequence_correct += int(teacher_sequence_correct)
 
-    def summary(self) -> dict[str, float | int]:
+    def summary(self) -> dict[str, Any]:
+        most_common_target = sorted(
+            self.target_counts.items(), key=lambda item: (-item[1], item[0])
+        )[0] if self.target_counts else (None, 0)
+        generated = sorted(
+            self.generated_value_counts.items(), key=lambda item: (-item[1], item[0])
+        )
         return {
             "examples": self.examples,
             "autoregressive_exact": self.exact,
@@ -202,6 +245,39 @@ class MetricAccumulator:
             "teacher_forced_sequence_accuracy": self.teacher_sequence_correct
             / max(1, self.examples),
             "supervised_tokens": self.teacher_tokens,
+            "most_common_target_baseline": {
+                "value": most_common_target[0],
+                "count": most_common_target[1],
+                "accuracy": most_common_target[1] / max(1, self.examples),
+            },
+            "generated_value_distribution": {
+                "parsed_examples": sum(self.generated_value_counts.values()),
+                "malformed_examples": self.examples - sum(self.generated_value_counts.values()),
+                "top_values": [
+                    {
+                        "value": value,
+                        "count": count,
+                        "rate_over_all_examples": count / max(1, self.examples),
+                        "rate_over_parsed_examples": count
+                        / max(1, sum(self.generated_value_counts.values())),
+                    }
+                    for value, count in generated[:10]
+                ],
+            },
+            "target_value_strata": {
+                "target_equals_1": {
+                    "examples": self.target_equal_one_examples,
+                    "exact": self.target_equal_one_exact,
+                    "exact_accuracy": self.target_equal_one_exact
+                    / max(1, self.target_equal_one_examples),
+                },
+                "target_greater_than_1": {
+                    "examples": self.target_greater_than_one_examples,
+                    "exact": self.target_greater_than_one_exact,
+                    "exact_accuracy": self.target_greater_than_one_exact
+                    / max(1, self.target_greater_than_one_examples),
+                },
+            },
         }
 
 
@@ -348,11 +424,17 @@ def evaluate_records(
         ):
             task = str(record["task"])
             length = int(record["n_digits"])
+            base100_width = input_base100_width(length)
+            regime = generalization_regime(length)
             keys = (
                 "overall",
                 f"task::{task}",
                 f"length::{length}",
                 f"task_length::{task}::{length}",
+                f"base100_width::{base100_width}",
+                f"task_base100_width::{task}::{base100_width}",
+                f"regime::{regime}",
+                f"task_regime::{task}::{regime}",
             )
             update = {
                 "expected_tokens": expected,
@@ -386,6 +468,10 @@ def evaluate_records(
     by_task: dict[str, Any] = {}
     by_length: dict[str, Any] = {}
     by_task_length: dict[str, dict[str, Any]] = defaultdict(dict)
+    by_base100_width: dict[str, Any] = {}
+    by_task_base100_width: dict[str, dict[str, Any]] = defaultdict(dict)
+    by_regime: dict[str, Any] = {}
+    by_task_regime: dict[str, dict[str, Any]] = defaultdict(dict)
     for key, accumulator in groups.items():
         if key == "overall":
             continue
@@ -394,8 +480,18 @@ def evaluate_records(
             by_task[parts[1]] = accumulator.summary()
         elif parts[0] == "length":
             by_length[parts[1]] = accumulator.summary()
-        else:
+        elif parts[0] == "task_length":
             by_task_length[parts[1]][parts[2]] = accumulator.summary()
+        elif parts[0] == "base100_width":
+            by_base100_width[parts[1]] = accumulator.summary()
+        elif parts[0] == "task_base100_width":
+            by_task_base100_width[parts[1]][parts[2]] = accumulator.summary()
+        elif parts[0] == "regime":
+            by_regime[parts[1]] = accumulator.summary()
+        elif parts[0] == "task_regime":
+            by_task_regime[parts[1]][parts[2]] = accumulator.summary()
+        else:
+            raise AssertionError(f"unknown metric group: {key}")
     return (
         {
             "overall": groups["overall"].summary(),
@@ -404,6 +500,18 @@ def evaluate_records(
             "by_task_and_digit_length": {
                 task: dict(sorted(values.items(), key=lambda item: int(item[0])))
                 for task, values in sorted(by_task_length.items())
+            },
+            "by_input_base100_width": dict(
+                sorted(by_base100_width.items(), key=lambda item: int(item[0]))
+            ),
+            "by_task_and_input_base100_width": {
+                task: dict(sorted(values.items(), key=lambda item: int(item[0])))
+                for task, values in sorted(by_task_base100_width.items())
+            },
+            "by_generalization_regime": dict(sorted(by_regime.items())),
+            "by_task_and_generalization_regime": {
+                task: dict(sorted(values.items()))
+                for task, values in sorted(by_task_regime.items())
             },
         },
         mistakes,
@@ -446,6 +554,7 @@ def _result_is_current(
         value = json.loads(path.read_text(encoding="utf-8"))
         return bool(
             value.get("checkpoint_sha256") == checkpoint_sha256
+            and value.get("format_version") == FORMAT_VERSION
             and value.get("evaluation_manifest_sha256") == manifest_sha256
             and value.get("examples_per_task_per_length") == examples_per_group
             and value.get("max_new_tokens") == max_new_tokens
@@ -453,6 +562,49 @@ def _result_is_current(
         )
     except (OSError, ValueError, json.JSONDecodeError):
         return False
+
+
+def _print_diagnostic_summary(metrics: Mapping[str, Any]) -> None:
+    """Print the compact task/regime view used for experiment handoff."""
+
+    print("Diagnostic summary", flush=True)
+    task_metrics = metrics.get("by_task", {})
+    task_regimes = metrics.get("by_task_and_generalization_regime", {})
+    for task in sorted(task_metrics):
+        task_row = task_metrics[task]
+        baseline = task_row["most_common_target_baseline"]
+        print(
+            f"  {task}: exact={task_row['autoregressive_exact_accuracy']:.2%} "
+            f"well_formed={task_row['well_formed_rate']:.2%} "
+            f"most_common_target={baseline['value']} "
+            f"baseline={baseline['accuracy']:.2%}",
+            flush=True,
+        )
+        for regime, row in sorted(task_regimes.get(task, {}).items()):
+            print(
+                f"    {regime}: examples={row['examples']} "
+                f"exact={row['autoregressive_exact_accuracy']:.2%} "
+                f"well_formed={row['well_formed_rate']:.2%}",
+                flush=True,
+            )
+        if task == "greatest_common_divisor":
+            strata = task_row["target_value_strata"]
+            equals_one = strata["target_equals_1"]
+            greater_one = strata["target_greater_than_1"]
+            print(
+                "    GCD strata: "
+                f"target=1 exact={equals_one['exact_accuracy']:.2%} "
+                f"({equals_one['exact']}/{equals_one['examples']}), "
+                f"target>1 exact={greater_one['exact_accuracy']:.2%} "
+                f"({greater_one['exact']}/{greater_one['examples']})",
+                flush=True,
+            )
+            top = task_row["generated_value_distribution"]["top_values"]
+            rendered = ", ".join(
+                f"{entry['value']}:{entry['rate_over_all_examples']:.2%}"
+                for entry in top[:5]
+            )
+            print(f"    top generated values (all-example rate): {rendered}", flush=True)
 
 
 def evaluate_run_split(
@@ -469,12 +621,13 @@ def evaluate_run_split(
     max_new_tokens: int,
     examples_per_task_per_length: int,
     progress_every: int,
+    force: bool,
 ) -> Path:
     checkpoint_path = Path(run.output_dir) / "checkpoint.pt"
     checkpoint_sha256 = _sha256(checkpoint_path)
     manifest_sha256 = _sha256(manifest_path)
     destination = output_dir / f"{run.run_id}-{split}.json"
-    if _result_is_current(
+    if not force and _result_is_current(
         destination,
         checkpoint_sha256=checkpoint_sha256,
         manifest_sha256=manifest_sha256,
@@ -512,7 +665,7 @@ def evaluate_run_split(
         progress_every=progress_every,
     )
     result = {
-        "format_version": 1,
+        "format_version": FORMAT_VERSION,
         "run": asdict(run),
         "split": split,
         "lengths": list(lengths),
@@ -524,9 +677,23 @@ def evaluate_run_split(
         "evaluation_manifest_sha256": manifest_sha256,
         "metrics": metrics,
         "first_mistakes": mistakes,
+        "diagnostic_definitions": {
+            "magnitude_ood_familiar_token_width": (
+                "outside the 1-5 decimal-digit training range but no wider than "
+                "the three-token base-100 training maximum"
+            ),
+            "token_length_ood": (
+                "requires more base-100 input tokens than any 1-5-digit operand"
+            ),
+            "most_common_target_baseline": (
+                "accuracy obtained by always predicting the most frequent target "
+                "inside the reported group"
+            ),
+        },
     }
     _atomic_json(result, destination)
     print(f"Saved: {destination}", flush=True)
+    _print_diagnostic_summary(metrics)
     model.to("cpu")
     del model
     if device.type == "mps" and hasattr(torch, "mps"):
@@ -549,6 +716,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--examples-per-task-per-length", type=int, default=1_000)
     parser.add_argument("--progress-every", type=int, default=1_000)
     parser.add_argument("--device", default=automatic_device())
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="recompute matching evaluations instead of reusing their JSON files",
+    )
     return parser
 
 
@@ -570,6 +742,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 max_new_tokens=args.max_new_tokens,
                 examples_per_task_per_length=args.examples_per_task_per_length,
                 progress_every=args.progress_every,
+                force=args.force,
             )
         if args.split in {"ood", "both"}:
             evaluate_run_split(
@@ -585,6 +758,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 max_new_tokens=args.max_new_tokens,
                 examples_per_task_per_length=args.examples_per_task_per_length,
                 progress_every=args.progress_every,
+                force=args.force,
             )
     return 0
 
@@ -597,6 +771,8 @@ __all__ = [
     "MetricAccumulator",
     "evaluate_records",
     "greedy_generate_batch",
+    "generalization_regime",
+    "input_base100_width",
     "load_balanced_records",
     "main",
     "parse_generated_answer",

@@ -1,0 +1,182 @@
+{
+  "checkpoint": "runs/henry-integer-v1/mlp-tasks01-seed314159/checkpoint.pt",
+  "checkpoint_sha256": "bf986f717b2f2e1cfc0bb01fd1c2247fcbe26780af2d7d775f7ea3c0e81f67c9",
+  "evaluation_manifest": "data/integer-4m-v1/manifest.json",
+  "evaluation_manifest_sha256": "0c1115a23fda2ba5b66f29e52f4cb052502073a49d5c4fe2e3e1344259d08f5d",
+  "examples_per_task_per_length": 1000,
+  "first_mistakes": [],
+  "format_version": 1,
+  "lengths": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "max_new_tokens": 32,
+  "metrics": {
+    "by_digit_length": {
+      "1": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 7.137649413948566e-07,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "2": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 4.133578615785893e-07,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "3": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 2.042788493827885e-06,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "4": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 1.6507851308666943e-06,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "5": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 3.2433487049068786e-05,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      }
+    },
+    "by_task": {
+      "decimal_digit_sum": {
+        "autoregressive_exact": 5000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 5000,
+        "supervised_tokens": 10000,
+        "teacher_forced_loss": 7.450836695347363e-06,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 5000,
+        "well_formed_rate": 1.0
+      }
+    },
+    "by_task_and_digit_length": {
+      "decimal_digit_sum": {
+        "1": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 7.137649413948566e-07,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "2": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 4.133578615785893e-07,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "3": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 2.042788493827885e-06,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "4": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 1.6507851308666943e-06,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "5": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 3.2433487049068786e-05,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        }
+      }
+    },
+    "overall": {
+      "autoregressive_exact": 5000,
+      "autoregressive_exact_accuracy": 1.0,
+      "autoregressive_token_accuracy": 1.0,
+      "examples": 5000,
+      "supervised_tokens": 10000,
+      "teacher_forced_loss": 7.450836695347363e-06,
+      "teacher_forced_sequence_accuracy": 1.0,
+      "teacher_forced_token_accuracy": 1.0,
+      "well_formed": 5000,
+      "well_formed_rate": 1.0
+    }
+  },
+  "run": {
+    "architecture": "mlp",
+    "output_dir": "runs/henry-integer-v1/mlp-tasks01-seed314159",
+    "run_id": "mlp-tasks01-seed314159",
+    "seed": 314159,
+    "task_count": 1,
+    "tasks": [
+      "decimal_digit_sum"
+    ]
+  },
+  "split": "iid"
+}

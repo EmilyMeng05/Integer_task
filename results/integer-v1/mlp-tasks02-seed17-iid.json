@@ -1,0 +1,618 @@
+{
+  "checkpoint": "runs/henry-integer-v1/mlp-tasks02-seed17/checkpoint.pt",
+  "checkpoint_sha256": "9db834cc51ad082ce30e343c673d674a93ff8096844b8038edd02253fa2c1334",
+  "evaluation_manifest": "data/integer-4m-v1/manifest.json",
+  "evaluation_manifest_sha256": "0c1115a23fda2ba5b66f29e52f4cb052502073a49d5c4fe2e3e1344259d08f5d",
+  "examples_per_task_per_length": 1000,
+  "first_mistakes": [
+    {
+      "expected": [
+        "08",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3960017,
+      "inputs": {
+        "operand": 496,
+        "primary": 808
+      },
+      "n_digits": 3,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "28",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3960105,
+      "inputs": {
+        "operand": 2688,
+        "primary": 6692
+      },
+      "n_digits": 4,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "12",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3960137,
+      "inputs": {
+        "operand": 588,
+        "primary": 192
+      },
+      "n_digits": 3,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "03",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3960225,
+      "inputs": {
+        "operand": 6477,
+        "primary": 2943
+      },
+      "n_digits": 4,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "31",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3960233,
+      "inputs": {
+        "operand": 21483,
+        "primary": 41509
+      },
+      "n_digits": 5,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "15",
+        "<EOS>"
+      ],
+      "generated": [
+        "05",
+        "<EOS>"
+      ],
+      "id": 3960353,
+      "inputs": {
+        "operand": 19425,
+        "primary": 85305
+      },
+      "n_digits": 5,
+      "parsed_generated": 5,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "06",
+        "<EOS>"
+      ],
+      "generated": [
+        "02",
+        "<EOS>"
+      ],
+      "id": 3960417,
+      "inputs": {
+        "operand": 810,
+        "primary": 408
+      },
+      "n_digits": 3,
+      "parsed_generated": 2,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "08",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3960465,
+      "inputs": {
+        "operand": 1672,
+        "primary": 1904
+      },
+      "n_digits": 4,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "17",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3960553,
+      "inputs": {
+        "operand": 75191,
+        "primary": 42296
+      },
+      "n_digits": 5,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "06",
+        "<EOS>"
+      ],
+      "generated": [
+        "02",
+        "<EOS>"
+      ],
+      "id": 3960673,
+      "inputs": {
+        "operand": 16746,
+        "primary": 80166
+      },
+      "n_digits": 5,
+      "parsed_generated": 2,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "03",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3960697,
+      "inputs": {
+        "operand": 159,
+        "primary": 594
+      },
+      "n_digits": 3,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "16",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3960833,
+      "inputs": {
+        "operand": 65584,
+        "primary": 40912
+      },
+      "n_digits": 5,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "07",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3960937,
+      "inputs": {
+        "operand": 224,
+        "primary": 371
+      },
+      "n_digits": 3,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "43",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3961057,
+      "inputs": {
+        "operand": 559,
+        "primary": 516
+      },
+      "n_digits": 3,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "27",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3961073,
+      "inputs": {
+        "operand": 49356,
+        "primary": 49221
+      },
+      "n_digits": 5,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "03",
+        "<EOS>"
+      ],
+      "generated": [
+        "01",
+        "<EOS>"
+      ],
+      "id": 3961153,
+      "inputs": {
+        "operand": 74799,
+        "primary": 90204
+      },
+      "n_digits": 5,
+      "parsed_generated": 1,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "01",
+        "<EOS>"
+      ],
+      "generated": [
+        "03",
+        "<EOS>"
+      ],
+      "id": 3961177,
+      "inputs": {
+        "operand": 292,
+        "primary": 737
+      },
+      "n_digits": 3,
+      "parsed_generated": 3,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "52",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3961409,
+      "inputs": {
+        "operand": 52,
+        "primary": 52
+      },
+      "n_digits": 2,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "08",
+        "<EOS>"
+      ],
+      "generated": [
+        "04",
+        "<EOS>"
+      ],
+      "id": 3961465,
+      "inputs": {
+        "operand": 4456,
+        "primary": 5336
+      },
+      "n_digits": 4,
+      "parsed_generated": 4,
+      "task": "greatest_common_divisor"
+    },
+    {
+      "expected": [
+        "01",
+        "<EOS>"
+      ],
+      "generated": [
+        "03",
+        "<EOS>"
+      ],
+      "id": 3961577,
+      "inputs": {
+        "operand": 731,
+        "primary": 517
+      },
+      "n_digits": 3,
+      "parsed_generated": 3,
+      "task": "greatest_common_divisor"
+    }
+  ],
+  "format_version": 1,
+  "lengths": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "max_new_tokens": 32,
+  "metrics": {
+    "by_digit_length": {
+      "1": {
+        "autoregressive_exact": 2000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 2000,
+        "supervised_tokens": 4000,
+        "teacher_forced_loss": 5.712480470037917e-05,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 2000,
+        "well_formed_rate": 1.0
+      },
+      "2": {
+        "autoregressive_exact": 1995,
+        "autoregressive_exact_accuracy": 0.9975,
+        "autoregressive_token_accuracy": 0.99875,
+        "examples": 2000,
+        "supervised_tokens": 4000,
+        "teacher_forced_loss": 0.005777564169587094,
+        "teacher_forced_sequence_accuracy": 0.9975,
+        "teacher_forced_token_accuracy": 0.99875,
+        "well_formed": 2000,
+        "well_formed_rate": 1.0
+      },
+      "3": {
+        "autoregressive_exact": 1890,
+        "autoregressive_exact_accuracy": 0.945,
+        "autoregressive_token_accuracy": 0.9637447231189471,
+        "examples": 2000,
+        "supervised_tokens": 4027,
+        "teacher_forced_loss": 0.13049141170209433,
+        "teacher_forced_sequence_accuracy": 0.945,
+        "teacher_forced_token_accuracy": 0.969704494661038,
+        "well_formed": 2000,
+        "well_formed_rate": 1.0
+      },
+      "4": {
+        "autoregressive_exact": 1912,
+        "autoregressive_exact_accuracy": 0.956,
+        "autoregressive_token_accuracy": 0.9760359460808787,
+        "examples": 2000,
+        "supervised_tokens": 4006,
+        "teacher_forced_loss": 0.10823298781328053,
+        "teacher_forced_sequence_accuracy": 0.956,
+        "teacher_forced_token_accuracy": 0.9772840738891663,
+        "well_formed": 2000,
+        "well_formed_rate": 1.0
+      },
+      "5": {
+        "autoregressive_exact": 1845,
+        "autoregressive_exact_accuracy": 0.9225,
+        "autoregressive_token_accuracy": 0.9544889331012186,
+        "examples": 2000,
+        "supervised_tokens": 4021,
+        "teacher_forced_loss": 0.1879180500527982,
+        "teacher_forced_sequence_accuracy": 0.9225,
+        "teacher_forced_token_accuracy": 0.9587167371300671,
+        "well_formed": 2000,
+        "well_formed_rate": 1.0
+      }
+    },
+    "by_task": {
+      "decimal_digit_sum": {
+        "autoregressive_exact": 4998,
+        "autoregressive_exact_accuracy": 0.9996,
+        "autoregressive_token_accuracy": 0.9998,
+        "examples": 5000,
+        "supervised_tokens": 10000,
+        "teacher_forced_loss": 0.0008797415570386193,
+        "teacher_forced_sequence_accuracy": 0.9996,
+        "teacher_forced_token_accuracy": 0.9998,
+        "well_formed": 5000,
+        "well_formed_rate": 1.0
+      },
+      "greatest_common_divisor": {
+        "autoregressive_exact": 4644,
+        "autoregressive_exact_accuracy": 0.9288,
+        "autoregressive_token_accuracy": 0.9574298786552616,
+        "examples": 5000,
+        "supervised_tokens": 10054,
+        "teacher_forced_loss": 0.1719942394761688,
+        "teacher_forced_sequence_accuracy": 0.9288,
+        "teacher_forced_token_accuracy": 0.9620051720708176,
+        "well_formed": 5000,
+        "well_formed_rate": 1.0
+      }
+    },
+    "by_task_and_digit_length": {
+      "decimal_digit_sum": {
+        "1": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 1.184852968526684e-05,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "2": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 1.1979278884609813e-05,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "3": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 4.9056466731713044e-05,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "4": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.0001808143893331362,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "5": {
+          "autoregressive_exact": 998,
+          "autoregressive_exact_accuracy": 0.998,
+          "autoregressive_token_accuracy": 0.999,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.00414500912055837,
+          "teacher_forced_sequence_accuracy": 0.998,
+          "teacher_forced_token_accuracy": 0.999,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        }
+      },
+      "greatest_common_divisor": {
+        "1": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.0001024010797154915,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "2": {
+          "autoregressive_exact": 995,
+          "autoregressive_exact_accuracy": 0.995,
+          "autoregressive_token_accuracy": 0.9975,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.01154314906028958,
+          "teacher_forced_sequence_accuracy": 0.995,
+          "teacher_forced_token_accuracy": 0.9975,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "3": {
+          "autoregressive_exact": 890,
+          "autoregressive_exact_accuracy": 0.89,
+          "autoregressive_token_accuracy": 0.9279723729649728,
+          "examples": 1000,
+          "supervised_tokens": 2027,
+          "teacher_forced_loss": 0.25919625159885074,
+          "teacher_forced_sequence_accuracy": 0.89,
+          "teacher_forced_token_accuracy": 0.9398125308337445,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "4": {
+          "autoregressive_exact": 912,
+          "autoregressive_exact_accuracy": 0.912,
+          "autoregressive_token_accuracy": 0.9521435692921236,
+          "examples": 1000,
+          "supervised_tokens": 2006,
+          "teacher_forced_loss": 0.21596197427783426,
+          "teacher_forced_sequence_accuracy": 0.912,
+          "teacher_forced_token_accuracy": 0.9546360917248256,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "5": {
+          "autoregressive_exact": 847,
+          "autoregressive_exact_accuracy": 0.847,
+          "autoregressive_token_accuracy": 0.9104403760514597,
+          "examples": 1000,
+          "supervised_tokens": 2021,
+          "teacher_forced_loss": 0.36978152450330776,
+          "teacher_forced_sequence_accuracy": 0.847,
+          "teacher_forced_token_accuracy": 0.9188520534388916,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        }
+      }
+    },
+    "overall": {
+      "autoregressive_exact": 9642,
+      "autoregressive_exact_accuracy": 0.9642,
+      "autoregressive_token_accuracy": 0.9785578936870449,
+      "examples": 10000,
+      "supervised_tokens": 20054,
+      "teacher_forced_loss": 0.08666737305593833,
+      "teacher_forced_sequence_accuracy": 0.9642,
+      "teacher_forced_token_accuracy": 0.980851700408896,
+      "well_formed": 10000,
+      "well_formed_rate": 1.0
+    }
+  },
+  "run": {
+    "architecture": "mlp",
+    "output_dir": "runs/henry-integer-v1/mlp-tasks02-seed17",
+    "run_id": "mlp-tasks02-seed17",
+    "seed": 17,
+    "task_count": 2,
+    "tasks": [
+      "decimal_digit_sum",
+      "greatest_common_divisor"
+    ]
+  },
+  "split": "iid"
+}

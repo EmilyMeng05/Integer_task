@@ -8,7 +8,9 @@ import torch
 
 from neurips_integers.evaluate import (
     MetricAccumulator,
+    generalization_regime,
     greedy_generate_batch,
+    input_base100_width,
     load_balanced_records,
     parse_generated_answer,
     split_prompt_and_answer,
@@ -89,6 +91,57 @@ class IntegerEvaluationTests(unittest.TestCase):
         self.assertEqual(summary["autoregressive_exact_accuracy"], 1.0)
         self.assertEqual(summary["well_formed_rate"], 1.0)
         self.assertAlmostEqual(float(summary["teacher_forced_loss"]), 0.1)
+
+    def test_metric_accumulator_tracks_baselines_and_target_strata(self) -> None:
+        metrics = MetricAccumulator()
+        rows = (
+            (1, ("01", "<EOS>")),
+            (2, ("01", "<EOS>")),
+            (2, ("<EOS>",)),
+        )
+        for expected, generated in rows:
+            metrics.update(
+                expected_tokens=(f"{expected:02d}", "<EOS>"),
+                generated_tokens=generated,
+                expected_value=expected,
+                teacher_loss_sum=0.0,
+                teacher_tokens=2,
+                teacher_token_correct=2,
+                teacher_sequence_correct=True,
+            )
+        summary = metrics.summary()
+        self.assertEqual(
+            summary["most_common_target_baseline"],
+            {"value": 2, "count": 2, "accuracy": 2 / 3},
+        )
+        self.assertEqual(
+            summary["target_value_strata"]["target_equals_1"],
+            {"examples": 1, "exact": 1, "exact_accuracy": 1.0},
+        )
+        self.assertEqual(
+            summary["target_value_strata"]["target_greater_than_1"],
+            {"examples": 2, "exact": 0, "exact_accuracy": 0.0},
+        )
+        generated = summary["generated_value_distribution"]
+        self.assertEqual(generated["parsed_examples"], 2)
+        self.assertEqual(generated["malformed_examples"], 1)
+        self.assertEqual(generated["top_values"][0]["value"], 1)
+        self.assertEqual(generated["top_values"][0]["count"], 2)
+
+    def test_base100_width_and_generalization_regimes(self) -> None:
+        self.assertEqual(
+            [input_base100_width(length) for length in range(1, 11)],
+            [1, 1, 2, 2, 3, 3, 4, 4, 5, 5],
+        )
+        self.assertEqual(generalization_regime(5), "iid")
+        self.assertEqual(
+            generalization_regime(6),
+            "magnitude_ood_familiar_token_width",
+        )
+        self.assertEqual(generalization_regime(7), "token_length_ood")
+        self.assertEqual(generalization_regime(10), "token_length_ood")
+        with self.assertRaises(ValueError):
+            input_base100_width(0)
 
     def test_small_ood_corpus_is_balanced_and_fully_verified(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

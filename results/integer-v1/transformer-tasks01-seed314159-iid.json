@@ -1,0 +1,200 @@
+{
+  "checkpoint": "runs/henry-integer-v1/transformer-tasks01-seed314159/checkpoint.pt",
+  "checkpoint_sha256": "3787b7060162eac803369f05e4fc843c82e9e2f8cb6dbec998edff8779d20b5f",
+  "evaluation_manifest": "data/integer-4m-v1/manifest.json",
+  "evaluation_manifest_sha256": "0c1115a23fda2ba5b66f29e52f4cb052502073a49d5c4fe2e3e1344259d08f5d",
+  "examples_per_task_per_length": 1000,
+  "first_mistakes": [
+    {
+      "expected": [
+        "15",
+        "<EOS>"
+      ],
+      "generated": [
+        "16",
+        "<EOS>"
+      ],
+      "id": 3998912,
+      "inputs": {
+        "primary": 10095
+      },
+      "n_digits": 5,
+      "parsed_generated": 16,
+      "task": "decimal_digit_sum"
+    }
+  ],
+  "format_version": 1,
+  "lengths": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "max_new_tokens": 32,
+  "metrics": {
+    "by_digit_length": {
+      "1": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 2.3681738358391157e-05,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "2": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 2.1994550013914706e-05,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "3": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 0.0001516614681622741,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "4": {
+        "autoregressive_exact": 1000,
+        "autoregressive_exact_accuracy": 1.0,
+        "autoregressive_token_accuracy": 1.0,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 0.0008380251739617961,
+        "teacher_forced_sequence_accuracy": 1.0,
+        "teacher_forced_token_accuracy": 1.0,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      },
+      "5": {
+        "autoregressive_exact": 999,
+        "autoregressive_exact_accuracy": 0.999,
+        "autoregressive_token_accuracy": 0.9995,
+        "examples": 1000,
+        "supervised_tokens": 2000,
+        "teacher_forced_loss": 0.013408499908826343,
+        "teacher_forced_sequence_accuracy": 0.999,
+        "teacher_forced_token_accuracy": 0.9995,
+        "well_formed": 1000,
+        "well_formed_rate": 1.0
+      }
+    },
+    "by_task": {
+      "decimal_digit_sum": {
+        "autoregressive_exact": 4999,
+        "autoregressive_exact_accuracy": 0.9998,
+        "autoregressive_token_accuracy": 0.9999,
+        "examples": 5000,
+        "supervised_tokens": 10000,
+        "teacher_forced_loss": 0.002888772567864544,
+        "teacher_forced_sequence_accuracy": 0.9998,
+        "teacher_forced_token_accuracy": 0.9999,
+        "well_formed": 5000,
+        "well_formed_rate": 1.0
+      }
+    },
+    "by_task_and_digit_length": {
+      "decimal_digit_sum": {
+        "1": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 2.3681738358391157e-05,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "2": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 2.1994550013914706e-05,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "3": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.0001516614681622741,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "4": {
+          "autoregressive_exact": 1000,
+          "autoregressive_exact_accuracy": 1.0,
+          "autoregressive_token_accuracy": 1.0,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.0008380251739617961,
+          "teacher_forced_sequence_accuracy": 1.0,
+          "teacher_forced_token_accuracy": 1.0,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        },
+        "5": {
+          "autoregressive_exact": 999,
+          "autoregressive_exact_accuracy": 0.999,
+          "autoregressive_token_accuracy": 0.9995,
+          "examples": 1000,
+          "supervised_tokens": 2000,
+          "teacher_forced_loss": 0.013408499908826343,
+          "teacher_forced_sequence_accuracy": 0.999,
+          "teacher_forced_token_accuracy": 0.9995,
+          "well_formed": 1000,
+          "well_formed_rate": 1.0
+        }
+      }
+    },
+    "overall": {
+      "autoregressive_exact": 4999,
+      "autoregressive_exact_accuracy": 0.9998,
+      "autoregressive_token_accuracy": 0.9999,
+      "examples": 5000,
+      "supervised_tokens": 10000,
+      "teacher_forced_loss": 0.002888772567864544,
+      "teacher_forced_sequence_accuracy": 0.9998,
+      "teacher_forced_token_accuracy": 0.9999,
+      "well_formed": 5000,
+      "well_formed_rate": 1.0
+    }
+  },
+  "run": {
+    "architecture": "transformer",
+    "output_dir": "runs/henry-integer-v1/transformer-tasks01-seed314159",
+    "run_id": "transformer-tasks01-seed314159",
+    "seed": 314159,
+    "task_count": 1,
+    "tasks": [
+      "decimal_digit_sum"
+    ]
+  },
+  "split": "iid"
+}
