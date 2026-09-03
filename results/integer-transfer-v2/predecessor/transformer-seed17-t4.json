@@ -1,0 +1,463 @@
+{
+  "architecture": "transformer",
+  "batch_size": 4,
+  "best_step": 50,
+  "best_validation_loss": 2.0842226285200853,
+  "format_version": 1,
+  "iid": {
+    "exact_accuracy": 0.0026954177897574125,
+    "exact_by_digit_length": {
+      "1": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 6
+      },
+      "2": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 65
+      },
+      "3": {
+        "accuracy": 0.01,
+        "exact": 1,
+        "examples": 100
+      },
+      "4": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      },
+      "5": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      }
+    },
+    "examples": 371,
+    "teacher_forced_loss": 2.141305252413525,
+    "well_formed_rate": 0.8598382749326146
+  },
+  "learning_rate": 0.0001,
+  "ood": {
+    "exact_accuracy": 0.0,
+    "exact_by_digit_length": {
+      "10": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      },
+      "6": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      },
+      "7": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      },
+      "8": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      },
+      "9": {
+        "accuracy": 0.0,
+        "exact": 0,
+        "examples": 100
+      }
+    },
+    "examples": 500,
+    "teacher_forced_loss": 4.409987139701843,
+    "well_formed_rate": 0.176
+  },
+  "seed": 17,
+  "selection_rule": "lowest validation teacher-forced loss",
+  "shots": 20,
+  "source": "t4",
+  "source_checkpoint": "runs/henry-integer-v1/transformer-tasks04-seed17/checkpoint.pt",
+  "split_examples": {
+    "iid": 371,
+    "ood": 500,
+    "train": 20,
+    "validation": 82
+  },
+  "steps": 500,
+  "task": "predecessor",
+  "validation_curve": [
+    {
+      "exact_accuracy": 0.0,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 0,
+      "teacher_forced_loss": 8.83489704656077,
+      "well_formed_rate": 1.0
+    },
+    {
+      "exact_accuracy": 0.0,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 50,
+      "teacher_forced_loss": 2.0842226285200853,
+      "well_formed_rate": 0.8780487804878049
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 100,
+      "teacher_forced_loss": 2.469002744653723,
+      "well_formed_rate": 0.8658536585365854
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 150,
+      "teacher_forced_loss": 2.8387508732931956,
+      "well_formed_rate": 0.8780487804878049
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 200,
+      "teacher_forced_loss": 3.0342415138915344,
+      "well_formed_rate": 0.926829268292683
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 250,
+      "teacher_forced_loss": 3.058407036812751,
+      "well_formed_rate": 0.8780487804878049
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 300,
+      "teacher_forced_loss": 3.172724309858385,
+      "well_formed_rate": 0.9024390243902439
+    },
+    {
+      "exact_accuracy": 0.0,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 350,
+      "teacher_forced_loss": 3.175701229126899,
+      "well_formed_rate": 0.9146341463414634
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 400,
+      "teacher_forced_loss": 3.283488780587584,
+      "well_formed_rate": 0.9146341463414634
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 450,
+      "teacher_forced_loss": 3.248313385051685,
+      "well_formed_rate": 0.9024390243902439
+    },
+    {
+      "exact_accuracy": 0.012195121951219513,
+      "exact_by_digit_length": {
+        "1": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 2
+        },
+        "2": {
+          "accuracy": 0.05,
+          "exact": 1,
+          "examples": 20
+        },
+        "3": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "4": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        },
+        "5": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "examples": 20
+        }
+      },
+      "examples": 82,
+      "step": 500,
+      "teacher_forced_loss": 3.2871351897061527,
+      "well_formed_rate": 0.8902439024390244
+    }
+  ]
+}
