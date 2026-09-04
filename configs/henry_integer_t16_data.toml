@@ -1,0 +1,57 @@
+# Frozen data-generation protocol for the sixteen-task corpus.
+
+protocol_version = "henry-integer-t16/v1"
+dataset_protocol_version = "integer-16/v1"
+status = "sampling_audited"
+dataset_dir = "data/integer-8m-t16-v1"
+dataset_manifest = "data/integer-8m-t16-v1/manifest.json"
+sampling_audit = "results/integer-sampling/t16-sampling-audit.json"
+task_order_seed = 20260830
+legacy_sampling_seed = 20260830
+new_sampling_seed = 20260904
+total_records = 8000000
+records_per_task = 500000
+sampling_buckets_per_task = 5
+records_per_task_per_sampling_bucket = 100000
+shard_count = 100
+records_per_shard = 80000
+
+task_order = [
+  "decimal_digit_sum",
+  "greatest_common_divisor",
+  "multiplication",
+  "greater_than",
+  "integer_list_sum",
+  "modulo",
+  "addition",
+  "successor",
+  "subtraction",
+  "integer_division",
+  "number_of_decimal_digits",
+  "reverse_decimal_digits",
+  "decimal_digit_occurrence_count",
+  "even_odd",
+  "divisibility",
+  "factorial",
+]
+
+holdout_tasks = [
+  "predecessor",
+  "least_common_multiple",
+  "modular_addition",
+  "sort_ascending",
+]
+
+[data]
+base = 100
+train_shards = "000-097"
+validation_shards = "098"
+test_shards = "099"
+standard_training_decimal_digits = [1, 2, 3, 4, 5]
+standard_ood_decimal_digits = [6, 7, 8, 9, 10]
+factorial_training_inputs = [0, 100]
+factorial_ood_inputs = [101, 120]
+train_records = 7840000
+validation_records = 80000
+test_records = 80000
+max_sequence_length = 1024
