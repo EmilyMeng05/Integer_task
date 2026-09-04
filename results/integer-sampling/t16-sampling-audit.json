@@ -1,0 +1,123 @@
+{
+  "examples_checked": 40000,
+  "factorial_domain": [
+    0,
+    100
+  ],
+  "original_eight_sampling": "unchanged",
+  "protocol_version": "integer-t16/sampling-v1",
+  "samples_per_task_per_length": 1000,
+  "seed": 20260904,
+  "status": "passed",
+  "tasks": {
+    "decimal_digit_occurrence_count": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "multiple": 1332,
+        "one": 1832,
+        "zero": 1836
+      }
+    },
+    "divisibility": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "divisible": 2500,
+        "not_divisible": 2500
+      }
+    },
+    "even_odd": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "even": 2500,
+        "odd": 2500
+      }
+    },
+    "factorial": {
+      "actual_max_input_digit_lengths": {
+        "1": 807,
+        "2": 4166,
+        "3": 27
+      },
+      "strata": {
+        "large_51_100": 1665,
+        "medium_21_50": 1665,
+        "small_0_20": 1670
+      }
+    },
+    "integer_division": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "exact_multi": 1250,
+        "quotient_one": 1250,
+        "quotient_zero": 1250,
+        "remainder_multi": 1250
+      }
+    },
+    "number_of_decimal_digits": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "1_digits": 1000,
+        "2_digits": 1000,
+        "3_digits": 1000,
+        "4_digits": 1000,
+        "5_digits": 1000
+      }
+    },
+    "reverse_decimal_digits": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "no_trailing_zero": 2500,
+        "trailing_zero": 2500
+      }
+    },
+    "subtraction": {
+      "actual_max_input_digit_lengths": {
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000,
+        "5": 1000
+      },
+      "strata": {
+        "borrow": 2000,
+        "no_borrow": 3000
+      }
+    }
+  }
+}

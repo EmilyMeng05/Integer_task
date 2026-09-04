@@ -1,8 +1,8 @@
-"""Authoritative mathematical operations for the integer multitask corpus.
+"""Authoritative operations for the integer multitask corpus.
 
-This module deliberately contains no tokenization, sampling, or model code.
-The data generator and full verifier should both call these functions so that
-the mathematical conventions are explicit and testable.
+The original eight training tasks remain frozen.  The eight T16 candidates are
+listed separately until the T16 generator is installed, so the existing
+eight-task generator and checkpoints remain valid.
 """
 
 from __future__ import annotations
@@ -22,14 +22,34 @@ TRAINING_TASKS: tuple[str, ...] = (
     "integer_list_sum",
 )
 
+T16_CANDIDATE_TASKS: tuple[str, ...] = (
+    "subtraction",
+    "integer_division",
+    "number_of_decimal_digits",
+    "reverse_decimal_digits",
+    "decimal_digit_occurrence_count",
+    "even_odd",
+    "divisibility",
+    "factorial",
+)
+
 HOLDOUT_TASKS: tuple[str, ...] = (
     "predecessor",
     "least_common_multiple",
     "modular_addition",
     "sort_ascending",
 )
-
+# Preserve compatibility with the existing eight-task pipeline.
 TASK_NAMES: tuple[str, ...] = TRAINING_TASKS + HOLDOUT_TASKS
+
+# Registries for the upcoming T16 pipeline.
+T16_TASK_NAMES: tuple[str, ...] = (
+    TRAINING_TASKS + T16_CANDIDATE_TASKS
+)
+
+ALL_TASK_NAMES: tuple[str, ...] = (
+    T16_TASK_NAMES + HOLDOUT_TASKS
+)
 
 
 def _nonnegative_integer(value: object, name: str) -> int:
@@ -61,57 +81,34 @@ def _integer_tuple(values: Iterable[int], name: str) -> tuple[int, ...]:
     return result
 
 
-# Phase 1 training operations
-
+# Original eight training operations
 
 def successor(value: int) -> int:
-    """Return ``value + 1`` for a nonnegative integer."""
-
     return _nonnegative_integer(value, "value") + 1
 
 
 def addition(left: int, right: int) -> int:
-    """Return the sum of two nonnegative integers."""
-
-    return _nonnegative_integer(left, "left") + _nonnegative_integer(
-        right, "right"
-    )
+    return _nonnegative_integer(left, "left") + _nonnegative_integer(right, "right")
 
 
 def multiplication(left: int, right: int) -> int:
-    """Return the product of two nonnegative integers."""
-
-    return _nonnegative_integer(left, "left") * _nonnegative_integer(
-        right, "right"
-    )
+    return _nonnegative_integer(left, "left") * _nonnegative_integer(right, "right")
 
 
 def modulo(dividend: int, divisor: int) -> int:
-    """Return the nonnegative remainder ``dividend % divisor``."""
-
-    return _nonnegative_integer(dividend, "dividend") % _positive_integer(
-        divisor, "divisor"
-    )
+    return _nonnegative_integer(dividend, "dividend") % _positive_integer(divisor, "divisor")
 
 
 def greater_than(left: int, right: int) -> bool:
-    """Return whether ``left`` is strictly greater than ``right``."""
-
-    return _nonnegative_integer(left, "left") > _nonnegative_integer(
-        right, "right"
-    )
+    return _nonnegative_integer(left, "left") > _nonnegative_integer(right, "right")
 
 
 def decimal_digit_sum(value: int) -> int:
-    """Return the sum of the ordinary base-10 digits of ``value``."""
-
     number = _nonnegative_integer(value, "value")
     return sum(int(digit) for digit in str(number))
 
 
 def greatest_common_divisor(left: int, right: int) -> int:
-    """Return ``gcd(left, right)``; the pair ``(0, 0)`` is undefined."""
-
     left_value = _nonnegative_integer(left, "left")
     right_value = _nonnegative_integer(right, "right")
     if left_value == 0 and right_value == 0:
@@ -120,31 +117,72 @@ def greatest_common_divisor(left: int, right: int) -> int:
 
 
 def integer_list_sum(values: Iterable[int]) -> int:
-    """Return the sum of a nonempty sequence of nonnegative integers."""
-
     return sum(_integer_tuple(values, "values"))
+
+
+# Eight candidate T16 operations
+
+def subtraction(left: int, right: int) -> int:
+    """Return left-right, restricted to nonnegative answers."""
+    left_value = _nonnegative_integer(left, "left")
+    right_value = _nonnegative_integer(right, "right")
+    if right_value > left_value:
+        raise ValueError("subtraction requires left >= right")
+    return left_value - right_value
+
+
+def integer_division(dividend: int, divisor: int) -> int:
+    """Return floor division for a nonnegative dividend and positive divisor."""
+    return _nonnegative_integer(dividend, "dividend") // _positive_integer(divisor, "divisor")
+
+
+def number_of_decimal_digits(value: int) -> int:
+    """Count ordinary base-10 digits; zero has one digit."""
+    return len(str(_nonnegative_integer(value, "value")))
+
+
+def reverse_decimal_digits(value: int) -> int:
+    """Reverse ordinary decimal digits; leading zeros in the result are dropped."""
+    number = _nonnegative_integer(value, "value")
+    return int(str(number)[::-1])
+
+
+def decimal_digit_occurrence_count(value: int, digit: int) -> int:
+    """Count an ordinary decimal digit, independently of base-100 tokenization."""
+    number = _nonnegative_integer(value, "value")
+    digit_value = _nonnegative_integer(digit, "digit")
+    if digit_value > 9:
+        raise ValueError("digit must be between 0 and 9")
+    return str(number).count(str(digit_value))
+
+
+def even_odd(value: int) -> int:
+    """Return 0 for even and 1 for odd."""
+    return _nonnegative_integer(value, "value") % 2
+
+
+def divisibility(dividend: int, divisor: int) -> int:
+    """Return 1 when divisor divides dividend, otherwise 0."""
+    number = _nonnegative_integer(dividend, "dividend")
+    divisor_value = _positive_integer(divisor, "divisor")
+    return int(number % divisor_value == 0)
+
+
+def factorial(value: int) -> int:
+    return math.factorial(_nonnegative_integer(value, "value"))
 
 
 # Fixed holdout operations
 
-
 def predecessor(value: int) -> int:
-    """Return ``value - 1`` for a positive integer."""
-
     return _positive_integer(value, "value") - 1
 
 
 def least_common_multiple(left: int, right: int) -> int:
-    """Return the LCM of two positive integers."""
-
-    left_value = _positive_integer(left, "left")
-    right_value = _positive_integer(right, "right")
-    return math.lcm(left_value, right_value)
+    return math.lcm(_positive_integer(left, "left"), _positive_integer(right, "right"))
 
 
 def modular_addition(left: int, right: int, modulus: int) -> int:
-    """Return ``(left + right) % modulus`` for a positive modulus."""
-
     return (
         _nonnegative_integer(left, "left")
         + _nonnegative_integer(right, "right")
@@ -152,7 +190,4 @@ def modular_addition(left: int, right: int, modulus: int) -> int:
 
 
 def sort_ascending(values: Iterable[int]) -> tuple[int, ...]:
-    """Return a nonempty integer sequence in nondecreasing order."""
-
     return tuple(sorted(_integer_tuple(values, "values")))
-
