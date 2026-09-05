@@ -1,0 +1,2322 @@
+{
+  "aggregates": {
+    "mlp": {
+      "addition": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.2536666666666667,
+            "sample_std": 0.007020921117156447,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9998666666666667,
+            "sample_std": 0.00023094010767582486,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.7606666666666666,
+            "sample_std": 0.2782486897243783,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5653333333333334,
+            "sample_std": 0.3447128853601695,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.5165,
+            "sample_std": 0.4042634506111083,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.388,
+            "sample_std": 0.013174217244299569,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9216666666666666,
+            "sample_std": 0.1118764199165013,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.38426666666666665,
+            "sample_std": 0.19213425861447336,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.24991666666666668,
+            "sample_std": 0.23863182066382793,
+            "seeds": 3
+          }
+        }
+      },
+      "decimal_digit_sum": {
+        "1": {
+          "iid_exact_accuracy": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.9566666666666667,
+            "sample_std": 0.028711205710198435,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.1916,
+            "sample_std": 0.005768882040742379,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.4242,
+            "sample_std": 0.128951308640122,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0003333333333333333,
+            "sample_std": 0.00014433756729740645,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.28025,
+            "sample_std": 0.16118913580015248,
+            "seeds": 3
+          }
+        },
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.8336666666666667,
+            "sample_std": 0.0098332768359959,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.122,
+            "sample_std": 0.02264950330581224,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9993333333333333,
+            "sample_std": 0.0011547005383792525,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0426,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.024666666666666667,
+            "sample_std": 0.004500370355130046,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.23526666666666668,
+            "sample_std": 0.06125694518447139,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0003333333333333333,
+            "sample_std": 0.0005773502691896258,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.044250000000000005,
+            "sample_std": 0.07642684410598151,
+            "seeds": 3
+          }
+        },
+        "2": {
+          "iid_exact_accuracy": {
+            "mean": 0.9998,
+            "sample_std": 0.00019999999999997797,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.967,
+            "sample_std": 0.005291502622129186,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.1934,
+            "sample_std": 0.001058300524425835,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.43060000000000004,
+            "sample_std": 0.20393126292944888,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.28825,
+            "sample_std": 0.25491407866181104,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.9989333333333333,
+            "sample_std": 0.0006110100926608204,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.39233333333333337,
+            "sample_std": 0.35000761896469246,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9993333333333333,
+            "sample_std": 0.0011547005383792525,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.07880000000000001,
+            "sample_std": 0.06967266321879766,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.24646666666666667,
+            "sample_std": 0.06662562069754646,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0004166666666666667,
+            "sample_std": 0.0007216878364870322,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.058249999999999996,
+            "sample_std": 0.08356845995948471,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.9448666666666666,
+            "sample_std": 0.029751862686785358,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9999333333333333,
+            "sample_std": 0.00011547005383791243,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.3353333333333333,
+            "sample_std": 0.22509183311114003,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.997,
+            "sample_std": 0.0010000000000000009,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.06706666666666666,
+            "sample_std": 0.045018366622228016,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.20126666666666668,
+            "sample_std": 0.0016041612554021324,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.0023333333333333335,
+            "sample_std": 0.002155419526062927,
+            "seeds": 3
+          }
+        }
+      },
+      "greater_than": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.9462666666666667,
+            "sample_std": 0.030558359467309962,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.641,
+            "sample_std": 0.23205818235951087,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.5,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.31506666666666666,
+            "sample_std": 0.05875587913846013,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.7329333333333333,
+            "sample_std": 0.19618056308751214,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.23358333333333334,
+            "sample_std": 0.01546231979145863,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.6661666666666667,
+            "sample_std": 0.24522570385939021,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.9889333333333333,
+            "sample_std": 0.0007023769168568825,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.8896666666666667,
+            "sample_std": 0.019731531449265007,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.998,
+            "sample_std": 0.0020000000000000018,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.5,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.17966666666666667,
+            "sample_std": 0.003002221399786056,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.23793333333333333,
+            "sample_std": 0.044493744878727995,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0021666666666666666,
+            "sample_std": 0.00202072594216369,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.04791666666666667,
+            "sample_std": 0.05609274314323853,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.9738666666666667,
+            "sample_std": 0.004244211744639196,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.6206666666666667,
+            "sample_std": 0.0832426172902638,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.5,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.15166666666666667,
+            "sample_std": 0.025903152961238785,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.47073333333333334,
+            "sample_std": 0.22755222111272244,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.034416666666666665,
+            "sample_std": 0.04753573217415856,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.33841666666666664,
+            "sample_std": 0.2844402763909031,
+            "seeds": 3
+          }
+        }
+      },
+      "greatest_common_divisor": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.8726666666666667,
+            "sample_std": 0.004708856903042729,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.5386666666666666,
+            "sample_std": 0.05437217425607821,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.999,
+            "sample_std": 0.001732050807568879,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6228,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.10786666666666667,
+            "sample_std": 0.011038719732529373,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.20333333333333334,
+            "sample_std": 0.0023692474191889185,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.00016666666666666666,
+            "sample_std": 0.0002886751345948129,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.004416666666666667,
+            "sample_std": 0.00252899848424892,
+            "seeds": 3
+          }
+        },
+        "2": {
+          "iid_exact_accuracy": {
+            "mean": 0.9346,
+            "sample_std": 0.005031898250163672,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.838,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6104,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.18846666666666667,
+            "sample_std": 0.035279644744998964,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.3338,
+            "sample_std": 0.23053702522588426,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.026083333333333333,
+            "sample_std": 0.04409955593124871,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.16725,
+            "sample_std": 0.28817128153235533,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.9010666666666667,
+            "sample_std": 0.0007023769168568825,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.6943333333333334,
+            "sample_std": 0.03534590971149747,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6104,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.15233333333333332,
+            "sample_std": 0.014742229591664,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.36093333333333333,
+            "sample_std": 0.207258807613412,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.016833333333333336,
+            "sample_std": 0.02220547980416846,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.20116666666666666,
+            "sample_std": 0.259073509516765,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.8836666666666666,
+            "sample_std": 0.00562257355072686,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.5093333333333333,
+            "sample_std": 0.05006329327294931,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6104,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.10186666666666666,
+            "sample_std": 0.010012658654589867,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.2252,
+            "sample_std": 0.043647680350735706,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.0315,
+            "sample_std": 0.054559600438419634,
+            "seeds": 3
+          }
+        }
+      },
+      "integer_list_sum": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.056466666666666665,
+            "sample_std": 0.009436807369726973,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9992666666666666,
+            "sample_std": 0.00046188021535171385,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9453333333333334,
+            "sample_std": 0.07642861593234129,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.49113333333333337,
+            "sample_std": 0.09126496224364165,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.3775833333333333,
+            "sample_std": 0.1006262681079515,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.10740000000000001,
+            "sample_std": 0.010017983829094553,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9983333333333333,
+            "sample_std": 0.0013316656236959015,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.8103333333333333,
+            "sample_std": 0.08376355611680616,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.357,
+            "sample_std": 0.08391162017265547,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.24366666666666664,
+            "sample_std": 0.11183143937790183,
+            "seeds": 3
+          }
+        }
+      },
+      "modulo": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.447,
+            "sample_std": 0.11235710925437695,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.04633333333333334,
+            "sample_std": 0.08025168741735798,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9993333333333333,
+            "sample_std": 0.0011547005383792525,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0004,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.009266666666666666,
+            "sample_std": 0.016050337483471594,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6214666666666667,
+            "sample_std": 0.277797432193556,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.527,
+            "sample_std": 0.3475237401962635,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.6439333333333334,
+            "sample_std": 0.009908245724311357,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9999333333333333,
+            "sample_std": 0.00011547005383791243,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.054,
+            "sample_std": 0.06421059102671459,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9186666666666666,
+            "sample_std": 0.13312525430335648,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0004,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0108,
+            "sample_std": 0.012842118205342918,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.39780000000000004,
+            "sample_std": 0.21648538056875805,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.26758333333333334,
+            "sample_std": 0.24013359996746256,
+            "seeds": 3
+          }
+        }
+      },
+      "multiplication": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.20133333333333334,
+            "sample_std": 0.00041633319989322736,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9976666666666667,
+            "sample_std": 0.004041451884327384,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9229999999999999,
+            "sample_std": 0.0948841398759561,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5028,
+            "sample_std": 0.08771932512280288,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.39775,
+            "sample_std": 0.13191000720187987,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.24393333333333334,
+            "sample_std": 0.0041198705481280936,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.6873333333333334,
+            "sample_std": 0.26172759375605265,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.2412,
+            "sample_std": 0.14279551813694993,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.12966666666666668,
+            "sample_std": 0.11310430289486485,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.21386666666666668,
+            "sample_std": 0.0036460023770334103,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.776,
+            "sample_std": 0.16285883457767958,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.3504,
+            "sample_std": 0.199624347212458,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.244,
+            "sample_std": 0.23229036247765425,
+            "seeds": 3
+          }
+        }
+      },
+      "successor": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.9654,
+            "sample_std": 0.010547037498748139,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9999333333333333,
+            "sample_std": 0.00011547005383791243,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.013666666666666666,
+            "sample_std": 0.020305992547357377,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9916666666666667,
+            "sample_std": 0.009451631252505225,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0027333333333333333,
+            "sample_std": 0.004061198509471476,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.24146666666666666,
+            "sample_std": 0.06960871592935278,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.05391666666666667,
+            "sample_std": 0.08930437186013535,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.9917333333333334,
+            "sample_std": 0.00030550504633041625,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.05333333333333333,
+            "sample_std": 0.04020364825899925,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9883333333333333,
+            "sample_std": 0.007023769168568499,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0004,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.010666666666666668,
+            "sample_std": 0.00804072965179985,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.2018,
+            "sample_std": 0.004715930449020631,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.005166666666666667,
+            "sample_std": 0.007285830998131465,
+            "seeds": 3
+          }
+        }
+      }
+    },
+    "transformer": {
+      "addition": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.366,
+            "sample_std": 0.04897795422432424,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9999333333333333,
+            "sample_std": 0.00011547005383791243,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0006666666666666666,
+            "sample_std": 0.0005773502691896258,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9943333333333333,
+            "sample_std": 0.0030550504633038962,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.00013333333333333334,
+            "sample_std": 0.00011547005383792516,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5366,
+            "sample_std": 0.15786285186832275,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.42216666666666663,
+            "sample_std": 0.1971313542624139,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.8146666666666667,
+            "sample_std": 0.0667503807729464,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.034666666666666665,
+            "sample_std": 0.03256275991578929,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.006933333333333333,
+            "sample_std": 0.0065125519831578564,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.296,
+            "sample_std": 0.08405640963067601,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.12000000000000001,
+            "sample_std": 0.105070512038345,
+            "seeds": 3
+          }
+        }
+      },
+      "decimal_digit_sum": {
+        "1": {
+          "iid_exact_accuracy": {
+            "mean": 0.9996666666666667,
+            "sample_std": 0.00023094010767588897,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.5596666666666666,
+            "sample_std": 0.051539628765963505,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9996666666666667,
+            "sample_std": 0.0005773502691896262,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.11193333333333333,
+            "sample_std": 0.010307925753192698,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.4713333333333333,
+            "sample_std": 0.05352992932307435,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.33925,
+            "sample_std": 0.06691739310523086,
+            "seeds": 3
+          }
+        },
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.8703333333333333,
+            "sample_std": 0.03947167760981702,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.12866666666666665,
+            "sample_std": 0.04800347209664456,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0426,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0258,
+            "sample_std": 0.009600000000000001,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6853333333333333,
+            "sample_std": 0.14504376351064993,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 8.333333333333333e-05,
+            "sample_std": 0.00014433756729740645,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.6066666666666667,
+            "sample_std": 0.18130470438831237,
+            "seeds": 3
+          }
+        },
+        "2": {
+          "iid_exact_accuracy": {
+            "mean": 0.9998,
+            "sample_std": 0.00019999999999997797,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.10200000000000001,
+            "sample_std": 0.03459768778401239,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0204,
+            "sample_std": 0.006919537556802477,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6657333333333333,
+            "sample_std": 0.31504046300964794,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.5821666666666667,
+            "sample_std": 0.3938005787620599,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.9994666666666667,
+            "sample_std": 0.0004163331998932429,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.30866666666666664,
+            "sample_std": 0.2501885955301187,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0618,
+            "sample_std": 0.05014698395716336,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.48733333333333334,
+            "sample_std": 0.2887984995344216,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 8.333333333333333e-05,
+            "sample_std": 0.00014433756729740645,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.3591666666666667,
+            "sample_std": 0.36099812441802703,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.9977333333333334,
+            "sample_std": 0.0006429100507328562,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.7673333333333333,
+            "sample_std": 0.03481857741685228,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0404,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.15346666666666667,
+            "sample_std": 0.006963715483370437,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5006666666666667,
+            "sample_std": 0.21273244541755576,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.37583333333333335,
+            "sample_std": 0.26591555677194467,
+            "seeds": 3
+          }
+        }
+      },
+      "greater_than": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.989,
+            "sample_std": 0.0031240998703626374,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.958,
+            "sample_std": 0.01743559577416271,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.5,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.4882,
+            "sample_std": 0.10700448588727483,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6436,
+            "sample_std": 0.13538847809174906,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.37075,
+            "sample_std": 0.13799388573411506,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.5545,
+            "sample_std": 0.16923559761468626,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.9958,
+            "sample_std": 0.00040000000000001146,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.9923333333333333,
+            "sample_std": 0.0005773502691896262,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.5,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.2912666666666667,
+            "sample_std": 0.09260007199421247,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.47073333333333334,
+            "sample_std": 0.23486186010787988,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.116,
+            "sample_std": 0.11587520226519564,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.3384166666666667,
+            "sample_std": 0.29357732513484985,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.9937333333333334,
+            "sample_std": 0.0026633312473917418,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.9853333333333333,
+            "sample_std": 0.008082903768654767,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.5,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.28873333333333334,
+            "sample_std": 0.05975360519109564,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.357,
+            "sample_std": 0.077635301248852,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.11458333333333334,
+            "sample_std": 0.07412166237567351,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.19625,
+            "sample_std": 0.097044126561065,
+            "seeds": 3
+          }
+        }
+      },
+      "greatest_common_divisor": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.8894666666666666,
+            "sample_std": 0.0011372481406154637,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.8386666666666667,
+            "sample_std": 0.0032145502536643214,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6228,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.2732,
+            "sample_std": 0.05995431594138991,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.49293333333333333,
+            "sample_std": 0.06342249863678766,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.13183333333333333,
+            "sample_std": 0.07424466871993796,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.36616666666666664,
+            "sample_std": 0.07927812329598458,
+            "seeds": 3
+          }
+        },
+        "2": {
+          "iid_exact_accuracy": {
+            "mean": 0.9506666666666667,
+            "sample_std": 0.00011547005383791243,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.8653333333333333,
+            "sample_std": 0.00763762615825974,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6104,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.3622,
+            "sample_std": 0.013879481258317982,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5964666666666666,
+            "sample_std": 0.0021939310229205674,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.23641666666666666,
+            "sample_std": 0.016458913491884358,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.4955833333333333,
+            "sample_std": 0.002742413778650736,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.9406,
+            "sample_std": 0.008126499861564005,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.8516666666666667,
+            "sample_std": 0.05873102530463208,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6104,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.3937333333333333,
+            "sample_std": 0.16427468865693623,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6806666666666666,
+            "sample_std": 0.34050082721387526,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.27925,
+            "sample_std": 0.19956875381682374,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.6008333333333333,
+            "sample_std": 0.42562603401734406,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.8921333333333333,
+            "sample_std": 0.001026320287889372,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.833,
+            "sample_std": 0.006082762530298225,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.6104,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.1776,
+            "sample_std": 0.010738715006927035,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.47146666666666665,
+            "sample_std": 0.18237788608637104,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.01375,
+            "sample_std": 0.011947803145348521,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.3393333333333333,
+            "sample_std": 0.22797235760796378,
+            "seeds": 3
+          }
+        }
+      },
+      "integer_list_sum": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.1248,
+            "sample_std": 0.006965629906907197,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.997,
+            "sample_std": 0.005196152422706636,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6328666666666667,
+            "sample_std": 0.038109491381194474,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.5418333333333334,
+            "sample_std": 0.04646929990147617,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.17906666666666668,
+            "sample_std": 0.03412467338061031,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9756666666666667,
+            "sample_std": 0.040414518843273774,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.553,
+            "sample_std": 0.03390398206700798,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.4473333333333333,
+            "sample_std": 0.05131418744687802,
+            "seeds": 3
+          }
+        }
+      },
+      "modulo": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.6472,
+            "sample_std": 0.013301127771734223,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9997333333333334,
+            "sample_std": 0.00030550504633041625,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.004,
+            "sample_std": 0.00608276253029822,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9956666666666667,
+            "sample_std": 0.00585946527708232,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0004,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0008,
+            "sample_std": 0.001216552506059644,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.49433333333333335,
+            "sample_std": 0.029816326623736445,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.369,
+            "sample_std": 0.03610488194136631,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.6785333333333333,
+            "sample_std": 0.014993776486707178,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 0.9994,
+            "sample_std": 0.0005999999999999894,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.019,
+            "sample_std": 0.019519221295943134,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9956666666666667,
+            "sample_std": 0.007505553499465142,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0004,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0038,
+            "sample_std": 0.003903844259188627,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.24753333333333333,
+            "sample_std": 0.0321710014350398,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.0605,
+            "sample_std": 0.03993666861419465,
+            "seeds": 3
+          }
+        }
+      },
+      "multiplication": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.2134,
+            "sample_std": 0.0012165525060596376,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.6635333333333333,
+            "sample_std": 0.10738460473146673,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.5794166666666667,
+            "sample_std": 0.1342307559143333,
+            "seeds": 3
+          }
+        },
+        "4": {
+          "iid_exact_accuracy": {
+            "mean": 0.26006666666666667,
+            "sample_std": 0.0076218982762388835,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.29300000000000004,
+            "sample_std": 0.1359301291105103,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.11625,
+            "sample_std": 0.1699126613881379,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.23113333333333333,
+            "sample_std": 0.0018036999011291673,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.999,
+            "sample_std": 0.0010000000000000009,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5408000000000001,
+            "sample_std": 0.289476700271369,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.42625,
+            "sample_std": 0.36169712813347027,
+            "seeds": 3
+          }
+        }
+      },
+      "successor": {
+        "16": {
+          "iid_exact_accuracy": {
+            "mean": 0.9941333333333333,
+            "sample_std": 0.0009237604307033636,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.7106666666666667,
+            "sample_std": 0.15895387171545505,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0002,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.14213333333333333,
+            "sample_std": 0.03179077434309101,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.4504666666666666,
+            "sample_std": 0.05780288343442162,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.3130833333333333,
+            "sample_std": 0.07225360429302702,
+            "seeds": 3
+          }
+        },
+        "8": {
+          "iid_exact_accuracy": {
+            "mean": 0.9971333333333333,
+            "sample_std": 0.000808290376865497,
+            "seeds": 3
+          },
+          "iid_well_formed_rate": {
+            "mean": 1.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "magnitude_ood_exact_accuracy": {
+            "mean": 0.9013333333333333,
+            "sample_std": 0.0498932193121804,
+            "seeds": 3
+          },
+          "magnitude_ood_well_formed_rate": {
+            "mean": 0.9933333333333333,
+            "sample_std": 0.010692676621563636,
+            "seeds": 3
+          },
+          "ood_most_common_target_baseline": {
+            "mean": 0.0004,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "overall_ood_exact_accuracy": {
+            "mean": 0.18026666666666666,
+            "sample_std": 0.009978643862436076,
+            "seeds": 3
+          },
+          "overall_ood_well_formed_rate": {
+            "mean": 0.5476000000000001,
+            "sample_std": 0.11677328461596001,
+            "seeds": 3
+          },
+          "token_length_ood_exact_accuracy": {
+            "mean": 0.0,
+            "sample_std": 0.0,
+            "seeds": 3
+          },
+          "token_length_ood_well_formed_rate": {
+            "mean": 0.43616666666666665,
+            "sample_std": 0.14746701608608392,
+            "seeds": 3
+          }
+        }
+      }
+    }
+  },
+  "architectures": [
+    "transformer",
+    "mlp"
+  ],
+  "evaluation_protocol_audit": {
+    "exactly_paired_examples_across_all_stages": false,
+    "interpretation": "distribution-level comparison only; evaluation data identities differ",
+    "ood_data_identities": [
+      "evaluation_data_sha256:402eab4e9e30fd6f84676378af9c0f9ad8f103d83c7ce2ad1a6d443e8fd6fc08",
+      "evaluation_manifest_sha256:7d088f777ffc34ab09d41534d4d9b20fe0d4f19ccd2696cb7b563d000374e739"
+    ]
+  },
+  "introduction_to_t16_deltas": {
+    "mlp": {
+      "addition": {
+        "iid_exact_accuracy": -0.1343333333333333,
+        "magnitude_ood_exact_accuracy": 0.0,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "decimal_digit_sum": {
+        "iid_exact_accuracy": -0.16633333333333333,
+        "magnitude_ood_exact_accuracy": -0.8346666666666667,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "greater_than": {
+        "iid_exact_accuracy": -0.04266666666666663,
+        "magnitude_ood_exact_accuracy": -0.2486666666666667,
+        "token_length_ood_exact_accuracy": 0.23141666666666666
+      },
+      "greatest_common_divisor": {
+        "iid_exact_accuracy": -0.061933333333333285,
+        "magnitude_ood_exact_accuracy": -0.29933333333333334,
+        "token_length_ood_exact_accuracy": -0.025916666666666668
+      },
+      "integer_list_sum": {
+        "iid_exact_accuracy": -0.050933333333333344,
+        "magnitude_ood_exact_accuracy": 0.0,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "modulo": {
+        "iid_exact_accuracy": -0.19693333333333335,
+        "magnitude_ood_exact_accuracy": -0.007666666666666662,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "multiplication": {
+        "iid_exact_accuracy": -0.0426,
+        "magnitude_ood_exact_accuracy": 0.0,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "successor": {
+        "iid_exact_accuracy": -0.02633333333333332,
+        "magnitude_ood_exact_accuracy": -0.03966666666666666,
+        "token_length_ood_exact_accuracy": 0.0
+      }
+    },
+    "transformer": {
+      "addition": {
+        "iid_exact_accuracy": -0.44866666666666666,
+        "magnitude_ood_exact_accuracy": -0.033999999999999996,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "decimal_digit_sum": {
+        "iid_exact_accuracy": -0.1293333333333334,
+        "magnitude_ood_exact_accuracy": -0.431,
+        "token_length_ood_exact_accuracy": 8.333333333333333e-05
+      },
+      "greater_than": {
+        "iid_exact_accuracy": -0.006800000000000028,
+        "magnitude_ood_exact_accuracy": -0.03433333333333333,
+        "token_length_ood_exact_accuracy": 0.25475000000000003
+      },
+      "greatest_common_divisor": {
+        "iid_exact_accuracy": -0.06120000000000003,
+        "magnitude_ood_exact_accuracy": -0.026666666666666616,
+        "token_length_ood_exact_accuracy": -0.10458333333333333
+      },
+      "integer_list_sum": {
+        "iid_exact_accuracy": -0.054266666666666685,
+        "magnitude_ood_exact_accuracy": 0.0,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "modulo": {
+        "iid_exact_accuracy": -0.031333333333333324,
+        "magnitude_ood_exact_accuracy": -0.015,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "multiplication": {
+        "iid_exact_accuracy": -0.04666666666666666,
+        "magnitude_ood_exact_accuracy": 0.0,
+        "token_length_ood_exact_accuracy": 0.0
+      },
+      "successor": {
+        "iid_exact_accuracy": -0.0030000000000000027,
+        "magnitude_ood_exact_accuracy": -0.19066666666666665,
+        "token_length_ood_exact_accuracy": 0.0
+      }
+    }
+  },
+  "seeds": [
+    17,
+    42,
+    314159
+  ],
+  "shared_tasks": [
+    "decimal_digit_sum",
+    "greatest_common_divisor",
+    "multiplication",
+    "greater_than",
+    "integer_list_sum",
+    "modulo",
+    "addition",
+    "successor"
+  ],
+  "stages": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ]
+}
