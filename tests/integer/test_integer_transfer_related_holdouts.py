@@ -99,4 +99,4 @@ def test_modular_addition_record_uses_three_argument_grammar() -> None:
             record["tokens"][equals + 1 :],
         )
         == 1
-    )
+    ) 
