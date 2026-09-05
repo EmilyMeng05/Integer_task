@@ -2,7 +2,7 @@
 
 protocol_version = "henry-integer-t16/v1"
 dataset_protocol_version = "integer-16/v1"
-status = "sampling_audited"
+status = "dataset_verified"
 dataset_dir = "data/integer-8m-t16-v1"
 dataset_manifest = "data/integer-8m-t16-v1/manifest.json"
 sampling_audit = "results/integer-sampling/t16-sampling-audit.json"
